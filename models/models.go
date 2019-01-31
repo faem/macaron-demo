@@ -11,11 +11,12 @@ import (
 var engine *xorm.Engine
 
 func init() {
-	engine, err := xorm.NewEngine("postgres", "host=localhost port=5432 user=fahim password=1234 dbname=test sslmode=disable")
+	x, err := xorm.NewEngine("postgres", "host=localhost port=5432 user=fahim password=1234 dbname=test sslmode=disable")
 	if err != nil {
 		log.Fatal(err.Error())
 		return
 	}
+	engine = x
 
 	engine.SetLogger(nil)
 	engine.SetMapper(core.GonicMapper{})

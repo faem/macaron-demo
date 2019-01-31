@@ -2,11 +2,14 @@ package routers
 
 import (
 	"Macaron-Demo/models"
+	"fmt"
 	"gopkg.in/macaron.v1"
+	"log"
 )
 
 func ReadProfile(c *macaron.Context)  {
-
+	c.Write([]byte(fmt.Sprint(models.ReadProfile("fahim"))))
+	return
 }
 
 func CreateProfile(c *macaron.Context) {
@@ -20,7 +23,7 @@ func CreateProfile(c *macaron.Context) {
 	isEmpty(position, "Position", c)
 	password := c.Query("password")
 	isEmpty(password, "Password", c)
-
+	log.Println(username, name, company, position, password)
 	models.CreateProfile(username,name,company,position,password)
 	c.Write([]byte("Profile Created Successfully!"))
 	return
