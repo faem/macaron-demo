@@ -1,0 +1,4 @@
+package: Macaron-Demo
+import:
+- package: gopkg.in/macaron.v1
+  version: v1.3.2

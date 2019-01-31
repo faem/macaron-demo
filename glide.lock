@@ -1,0 +1,26 @@
+hash: 5be9cf46b4d6dd395044328fda21948e86c32326a358a97f43aa57d73795fa3b
+updated: 2019-01-31T18:45:55.516630559+06:00
+imports:
+- name: github.com/go-macaron/inject
+  version: d8a0b8677191f4380287cfebd08e462217bac7ad
+- name: github.com/go-xorm/builder
+  version: 1d658d7596c25394aab557ef5b50ef35bf706384
+- name: github.com/go-xorm/core
+  version: ccc80c1adf1f6172bbc548877f50a1163041a40a
+- name: github.com/go-xorm/xorm
+  version: 1f39c590c64924f358c0d89016ac9b2bb84e9125
+- name: github.com/lib/pq
+  version: 9eb73efc1fcc404148b56765b0d3f61d9a5ef8ee
+  subpackages:
+  - oid
+- name: github.com/Unknwon/com
+  version: 41959bdd855fb7db467f78865d5f9044507df1cd
+- name: golang.org/x/crypto
+  version: de0752318171da717af4ce24d0a2e8626afaeb11
+  subpackages:
+  - pbkdf2
+- name: gopkg.in/ini.v1
+  version: 6ed8d5f64cd79a498d1f3fab5880cc376ce41bbe
+- name: gopkg.in/macaron.v1
+  version: dfcb80ca86e8534962c62812efd93209c7e600e7
+testImports: []
