@@ -1,0 +1,18 @@
+{{if .Success}}
+    <h1>Profile Created Successfully!</h1>
+{{else}}
+    <h1>Register</h1>
+    <form method="POST">
+        <label>Username:</label><br />
+        <input type="text" name="username"><br />
+        <label>Name:</label><br />
+        <input type="text" name="name"><br />
+        <label>Company:</label><br />
+        <input type="text" name="company"><br />
+        <label>Position:</label><br />
+        <input type="text" name="position"><br />
+        <label>Password:</label><br />
+        <input type="password" name="password"><br />
+        <input type="submit">
+    </form>
+{{end}}

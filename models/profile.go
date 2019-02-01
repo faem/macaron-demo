@@ -1,7 +1,5 @@
 package models
 
-import "log"
-
 type Profile struct {
         UserName string `xorm:"pk not null"`
         Name     string
@@ -10,15 +8,15 @@ type Profile struct {
         Password string
 }
 
-func ReadProfile(username string) []Profile {
-        var profile = make([]Profile,1)
+func ReadProfile() []Profile {
+        var profile = make([]Profile,0)
         err := engine.Find(&profile)
         printError(err)
 
         return profile
 }
 
-func CreateProfile(username, name, company, position, password string) {
+func CreateProfile(username, name, company, position, password string) error {
         var profile = Profile{
                 UserName: username,
                 Name:     name,
@@ -26,10 +24,19 @@ func CreateProfile(username, name, company, position, password string) {
                 Position: position,
                 Password: password,
         }
-        log.Println(profile)
-        log.Println("engine:",engine)
         _, err := engine.Insert(profile)
-        printError(err)
+
+        return err
+}
+
+func MatchUsernamePass(username, pass string) (bool, error){
+        var profile = Profile{
+                UserName: username,
+                Password: pass,
+        }
+        found, err := engine.Get(&profile)
+
+        return found, err
 }
 
 func printError(err error) {

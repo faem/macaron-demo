@@ -12,8 +12,11 @@ func main() {
     m.Use(macaron.Renderer())
 
     m.Get("/", r.Home)
-    m.Post("/profile",r.CreateProfile)
+    m.Get("/register",r.ShowRegister)
+    m.Post("/register",r.CreateProfile)
     m.Get("/profile",r.ReadProfile)
+    m.Get("/login",r.ShowLogin)
+    m.Post("/login",r.Login)
 
     log.Fatal(http.ListenAndServe(":4000",m))
 }
